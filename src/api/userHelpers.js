@@ -12,16 +12,14 @@ export const logOut = () => {
 export const registerEndpoint = async (username, passWord) => {
   logOut();
   let apiURL = `${BASE_URL}/users/register`;
-  console.log(apiURL);
-  
+    
   const body = JSON.stringify({
     "username": username,
     "password": passWord
    });
 
   try {
-    //const response = await fetch(`${BASE_URL}/users/register`, {
-      const response = await fetch(apiURL, {
+    const response = await fetch(apiURL, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
