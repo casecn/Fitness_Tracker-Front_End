@@ -1,7 +1,7 @@
 const BASE_URL = "http://fitnesstrac-kr.herokuapp.com/api";
 
 /////////////////////////////////////////////////
-export const logOut = () => {
+const logout = () => {
   localStorage.removeItem("token");
   localStorage.removeItem("passWord");
   console.log("Purged");
@@ -9,8 +9,8 @@ export const logOut = () => {
 
 /////////////////////////////////////////////////
 
-export const registerEndpoint = async (username, passWord) => {
-  logOut();
+const registerEndpoint = async (username, passWord) => {
+  logout();
   let apiURL = `${BASE_URL}/users/register`;
     
   const body = JSON.stringify({
@@ -40,3 +40,39 @@ export const registerEndpoint = async (username, passWord) => {
     console.error(err);
   }
 };
+
+/////////////////////////////////////////////////
+const loginEndpoint = async (username, passWord) => {
+  let apiURL = `${BASE_URL}/users/login`;
+
+  const body = JSON.stringify({
+    "username": username,
+    "password": passWord
+   });
+
+  try {
+    let token = ""  
+    const response = await fetch(apiURL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: body,
+      });
+      const result = await response.json();
+      
+      if (result.message === "you're logged in!") {
+        token = result.token;
+        localStorage.setItem("token", JSON.stringify(token));
+        localStorage.setItem("userName", JSON.stringify(username));
+      } else {
+        window.alert("Login Failed!");
+        token = "not logged in";
+      }
+      return token;
+    } catch (error) {
+    console.error("LOGIN END POINT ERROR:", error);
+  }
+};
+
+export { registerEndpoint, logout, loginEndpoint };
