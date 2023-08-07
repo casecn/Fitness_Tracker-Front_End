@@ -10,7 +10,7 @@ import Root from "./routes/root";
 import MyRoutines from "./components/MyRoutines";
 import Activities from "./components/Activities";
 import Users from "./components/users";
-// import Login from "./components/Login";
+import Register from "./components/Register";
 
 const router = createBrowserRouter([
   {
@@ -27,8 +27,8 @@ const router = createBrowserRouter([
       //   element: <Users />,
       // },
       {
-        path: "/login",
-        element: <Login />,
+        path: "/logout",
+        element: <Logout />,
       },
       {
         path: "/Register",
