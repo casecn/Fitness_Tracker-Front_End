@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { getAllActivities } from "../api/activities";
 import { useNavigate } from "react-router";
-import { Button } from "react-router-dom";
+//import { Button } from "react-router-dom";
 
 const Activities = () => {
   const [activities, setActivities] = useState([]);
@@ -10,13 +10,9 @@ const Activities = () => {
   let navigate = useNavigate();
 
   const allActivities = async () => {
-    try {
-      const result = await getAllActivities();
-      setActivities(result);
-      return result;
-    } catch (error) {
-      throw error;
-    }
+    const result = await getAllActivities();
+    setActivities(result);
+    return result;
   };
 
   useEffect(() => {
