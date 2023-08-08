@@ -12,7 +12,7 @@ import Activities from "./components/Activities";
 import Users from "./components/users";
 import Register from "./components/Register";
 import CreateNewActivity from "./components/CreateNewActivity";
-
+import Home from "./components/Home";
 
 const router = createBrowserRouter([
   {
