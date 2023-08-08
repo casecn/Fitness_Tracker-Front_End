@@ -46,7 +46,7 @@ export const updateActivity = async (name, description) => {
     const response = await fetch(`${BASE_URL}/activities`, {
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${TOKEN}`,
+        Authorization: `Bearer ${localStorage.getItem( "token" )}`,
       },
       method: "PATCH",
       body: JSON.stringify({

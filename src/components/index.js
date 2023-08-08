@@ -15,4 +15,4 @@ export {
   MyRoutines,
   Home,
   CreateNewActivity,
-}
+};
