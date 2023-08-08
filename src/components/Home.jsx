@@ -1,21 +1,20 @@
 import { useState, useEffect } from "react";
-import { Link} from "react-router-dom"
+// import { Link } from "react-router-dom";
 import { retrieveAllRoutines } from "../api/routinesHelpers";
 import "../index.css";
 
-
 const Home = () => {
   const [routines, setRoutines] = useState([]);
-  
-  useEffect(()=>{
+
+  useEffect(() => {
     const routineList = async () => {
-      const allRoutines = await retrieveAllRoutines()
+      const allRoutines = await retrieveAllRoutines();
       return allRoutines;
-    }
+    };
     routineList()
       .then((allRoutines) => setRoutines(allRoutines))
-      .catch(console.error)
-  }, [])
+      .catch(console.error);
+  }, []);
 
   return (
     <>

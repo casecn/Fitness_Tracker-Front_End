@@ -2,12 +2,17 @@ import * as React from "react";
 import * as ReactDOM from "react-dom/client";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import "./index.css";
-import Root from "./routes/root";
-import { Home, Activities, MyRoutines, Register, LogOut, Login } from "./components/";
 import ErrorPage from "./error-page";
-
-
+import "./index.css";
+import Login from "./components/login";
+import Logout from "./components/logout";
+import Root from "./routes/root";
+import MyRoutines from "./components/MyRoutines";
+import Activities from "./components/Activities";
+import Users from "./components/users";
+import Register from "./components/Register";
+import CreateNewActivity from "./components/CreateNewActivity";
+import Home from "./components/Home";
 
 const router = createBrowserRouter([
   {
@@ -24,16 +29,16 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "/login",
-        element: <Login />,
+        path: "/logout",
+        element: <Logout />,
       },
       {
         path: "/Register",
         element: <Register />,
       },
       {
-        path: "/logout",
-        element: <LogOut />,
+        path: "/users",
+        element: <Users />,
       },
       {
         path: "/MyRoutines",
@@ -42,6 +47,10 @@ const router = createBrowserRouter([
       {
         path: "/Activities",
         element: <Activities />,
+      },
+      {
+        path: "/CreateNewActivity",
+        element: <CreateNewActivity />,
       },
     ],
   },
