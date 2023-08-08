@@ -11,6 +11,8 @@ import MyRoutines from "./components/MyRoutines";
 import Activities from "./components/Activities";
 import Users from "./components/users";
 import Register from "./components/Register";
+import CreateNewActivity from "./components/CreateNewActivity";
+
 
 const router = createBrowserRouter([
   {
@@ -22,10 +24,6 @@ const router = createBrowserRouter([
         index: true,
         element: <Login />,
       },
-      // {
-      //   path: "/users",
-      //   element: <Users />,
-      // },
       {
         path: "/logout",
         element: <Logout />,
@@ -45,6 +43,10 @@ const router = createBrowserRouter([
       {
         path: "/Activities",
         element: <Activities />,
+      },
+      {
+        path: "/CreateNewActivity",
+        element: <CreateNewActivity />,
       },
     ],
   },
