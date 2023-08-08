@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 // import { Link } from "react-router-dom";
 import { retrieveAllRoutines } from "../api/routinesHelpers";
-import "../index.css";
+//import "../index.css";
 
 const Home = () => {
   const [routines, setRoutines] = useState([]);

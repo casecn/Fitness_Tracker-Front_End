@@ -4,15 +4,16 @@ import * as ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ErrorPage from "./error-page";
 import "./index.css";
-import Login from "./components/login";
-import Logout from "./components/logout";
+import {
+  Login,
+  Register,
+  LogOut,
+  Activities,
+  MyRoutines,
+  Home,
+  CreateNewActivity,
+} from "./components";
 import Root from "./routes/root";
-import MyRoutines from "./components/MyRoutines";
-import Activities from "./components/Activities";
-import Users from "./components/users";
-import Register from "./components/Register";
-import CreateNewActivity from "./components/CreateNewActivity";
-import Home from "./components/Home";
 
 const router = createBrowserRouter([
   {
@@ -21,7 +22,7 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       {
-        index: true,
+        path: "/login",
         element: <Login />,
       },
       {
@@ -30,15 +31,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/logout",
-        element: <Logout />,
+        element: <LogOut />,
       },
       {
         path: "/Register",
         element: <Register />,
-      },
-      {
-        path: "/users",
-        element: <Users />,
       },
       {
         path: "/MyRoutines",

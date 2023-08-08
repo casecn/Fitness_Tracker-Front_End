@@ -1,18 +1,13 @@
 import { useState, useEffect } from "react";
 import { getAllActivities } from "../api/activities";
-import { useNavigate } from "react-router";
-//import { Button } from "react-router-dom";
 
 const Activities = () => {
   const [activities, setActivities] = useState([]);
-  const [token, setToken] = useState(null);
-  const [isLoggedIn, setLoggedIn] = useState(true);
-  let navigate = useNavigate();
-
+  
   const allActivities = async () => {
-    const result = await getAllActivities();
-    setActivities(result);
-    return result;
+  const result = await getAllActivities();
+  setActivities(result);
+  return result;
   };
 
   useEffect(() => {
@@ -22,11 +17,12 @@ const Activities = () => {
   return (
     <div id="activity">
       <h1>Activities!</h1>
-      {isLoggedIn ? (
-        <Button onClick={() => navigate("/activities/create-new-activity")}>
-          Create New Activity!
-        </Button>
-      ) : null}
+      {//localStorage.getItem("token") ? (
+        // <Button onClick={() => navigate("/activities/create-new-activity")}>
+        //   Create New Activity!
+        // </Button>
+      //) : null
+    }
       <div id="grid-wrapper">
         <div id="activity-container">
           {activities.length

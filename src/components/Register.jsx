@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, } from "react-router-dom";
 import { registerEndpoint } from "../api/userHelpers";
 
 
@@ -36,7 +36,7 @@ const Register = () => {
           <div className="max-w-[450px] h-[450px] rounded mx-auto bg-black/80 text-white">
             <div className="max-w-[320px] mx-auto py-16">
               <label className="text-red-600  text-3xl">
-                Register for Stranger&apos;s Things
+                Register for Fitness Tracker
               </label>
               <form className="w-full flex flex-col py-4">
                 <label className="text-white font-bold">User Name</label>
@@ -64,7 +64,7 @@ const Register = () => {
                   Register
                 </button>
                 <div>
-                  <Link to={`/things`}>Cancel</Link>
+                  <Link to={`/home`}>Cancel</Link>
                   <Link to={`/login`} className="float-right">
                     Log in
                   </Link>
