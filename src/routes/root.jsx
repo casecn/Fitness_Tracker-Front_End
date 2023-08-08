@@ -9,6 +9,7 @@ export default function Root() {
           <div className="flex items-center justify-between px-10 py-8 text-3xl">
             <NavLink
               to={`/Home`}
+              to={`/Home`}
               className={({ isActive, isPending }) =>
                 isActive ? "active" : isPending ? "pending" : ""
               }
@@ -24,7 +25,8 @@ export default function Root() {
                 <Link to={"/MyRoutines"} className="text-black text-2xl mr-10">
                   MyRoutines
                 </Link>
-                <Link to={"/Activities"} className="text-white text-2xl">
+                <br />
+                <Link to={"/Activities"} className="text-white text-xl">
                   Activities
                 </Link>
               </div>
@@ -32,7 +34,9 @@ export default function Root() {
           </div>
         </div>
       </nav>
-      <Outlet />
+      <div>
+        <Outlet />
+      </div>
     </div>
   );
 }
