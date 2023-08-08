@@ -9,7 +9,6 @@ export default function Root() {
           <div className="flex items-center justify-between px-10 py-8 text-3xl">
             <NavLink
               to={`/Home`}
-              to={`/Home`}
               className={({ isActive, isPending }) =>
                 isActive ? "active" : isPending ? "pending" : ""
               }
