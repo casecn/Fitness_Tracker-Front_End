@@ -73,7 +73,7 @@ const Login = () => {
                     Log in
                   </button>
                   <div>
-                    <Link to={`/things`}>Cancel</Link>
+                    <Link to={`/home`}>Cancel</Link>
                     <Link to={`/Register`} className="float-right">
                       Register
                     </Link>

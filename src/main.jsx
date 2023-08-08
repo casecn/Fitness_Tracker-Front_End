@@ -4,11 +4,10 @@ import * as ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
 import Root from "./routes/root";
-//import MyRoutines from "./components/MyRoutines";
-//import Activities from "./components/Activities";
-import Users from "./components/users";
-import { Activities, MyRoutines, Register, LogOut, Login } from "./components/";
-// import Login from "./components/Login";
+import { Home, Activities, MyRoutines, Register, LogOut, Login } from "./components/";
+import ErrorPage from "./error-page";
+
+
 
 const router = createBrowserRouter([
   {
@@ -20,10 +19,10 @@ const router = createBrowserRouter([
         index: true,
         element: <Login />,
       },
-      // {
-      //   path: "/users",
-      //   element: <Users />,
-      // },
+      {
+        path: "/home",
+        element: <Home />,
+      },
       {
         path: "/login",
         element: <Login />,

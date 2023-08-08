@@ -8,13 +8,14 @@ export default function Root() {
         <div className="container mx-auto">
           <div className="flex items-center justify-between px-10 py-8 text-3xl">
             <NavLink
-              to={`/HomePage`}
+              to={`/Home`}
               className={({ isActive, isPending }) =>
                 isActive ? "active" : isPending ? "pending" : ""
               }
             >
               Fitness Tracker
             </NavLink>
+            <br />
             <button
               className="text-white focus:outline-none focus:text-white lg:hidden"
               type="button"
@@ -30,16 +31,18 @@ export default function Root() {
                   d="M20 12H4M20 6H4M20 18H4"
                 ></path>
               </svg>
+              <br />
             </button>
-            <div className=" flex items-center">
-              <div className="mr-10">
-                <Link to={"/Home"} className="text-white text-2xl mr-10">
+            <div className=" flex items-left">
+              <div className="mr-20">
+                <Link to={"/home"} className="text-white text-xl mr-10">
                   Home
                 </Link>
-                <Link to={"/MyRoutines"} className="text-white text-2xl mr-10">
+                <Link to={"/MyRoutines"} className="text-white text-xl mr-10">
                   MyRoutines
                 </Link>
-                <Link to={"/Activities"} className="text-white text-2xl">
+                <br />
+                <Link to={"/Activities"} className="text-white text-xl">
                   Activities
                 </Link>
               </div>
@@ -47,7 +50,9 @@ export default function Root() {
           </div>
         </div>
       </nav>
-      <Outlet />
+      <div>
+        <Outlet />
+      </div>
     </div>
   );
 }
