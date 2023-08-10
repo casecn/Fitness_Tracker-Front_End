@@ -17,27 +17,30 @@ const Activities = () => {
   return (
     <div id="activity">
       <h1>Activities!</h1>
-      {//localStorage.getItem("token") ? (
+      {
+        //localStorage.getItem("token") ? (
         // <Button onClick={() => navigate("/activities/create-new-activity")}>
         //   Create New Activity!
         // </Button>
-      //) : null
-    }
-      <div id="grid-wrapper">
-        <div id="activity-container">
+        //) : null
+      }
+      <div className="flex flex-col items-center justify-center mx-auto space-y-3">
+        
           {activities.length
             ? activities.map((activity, idx) => {
                 return (
-                  <div className="allActivities" key={`activity: ${idx}`}>
-                    <h1>Activity Name: {activity.name}</h1>
-                    <h2>Description: {activity.description}</h2>
-                    <p>______________________</p>
+                  <div
+                    className=" border  shadow w-8/12 border-solid rounded-lg"
+                    key={idx}
+                  >
+                   <div className="text-sm"><u>Activity Name:</u> {activity.name}</div>
+                    <div className="text-xs">Description: {activity.description}</div>
                   </div>
                 );
               })
             : null}
         </div>
-      </div>
+      
     </div>
   );
 };
