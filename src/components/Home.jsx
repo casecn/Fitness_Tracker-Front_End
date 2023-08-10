@@ -18,17 +18,23 @@ const Home = () => {
 
   return (
     <>
-      <img src="../stock-photo-sportive-men-working-out-with-fitness-balls-1988637098.jpg"></img>
-      <div id="home-title">
-        <div>Your Fitness Tracker</div>
-        {routines &&
-          routines.map((routine) => (
-            <div key={routine.id} className="routine-container">
-              <h1>{routine.name}</h1>
+      <div className="flex flex-col">
+        <div >
+          <img
+            className="h-auto max-w-lg mx-auto"
+            src="../stock-photo-sportive-men-working-out-with-fitness-balls-1988637098.jpg"
+          ></img>
+        </div>
+        <div className="flex flex-col items-center justify-center mx-auto space-y-3">
+          {routines &&
+            routines.map((routine) => (
+              <div key={routine.id} className=" border  shadow w-8/12 border-solid rounded-lg">
+                <div className="text-sm font-semibold">{routine.name}</div>
 
-              <div>Routine Goal:{routine.goal}</div>
-            </div>
-          ))}
+                <div className="text-xs">Goal:{routine.goal}</div>
+              </div>
+            ))}
+        </div>
       </div>
     </>
   );
